@@ -74,17 +74,17 @@
                 @foreach ($posts as $post)
                 <!-- Post 1 -->
                 <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden">
-                    <a href="{{ route('post.details', $post->slug) }}">
+                    <a wire:navigate href="{{ route('post.details', $post->slug) }}">
                         <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image"
                             class="w-full h-48 object-cover">
                     </a>
                     <div class="p-6">
-                        <a href="{{ route('post.details', $post->slug) }}" class="hover:underline hover:text-blue-600">
+                        <a wire:navigate href="{{ route('post.details', $post->slug) }}" class="hover:underline hover:text-blue-600">
                             <h4 class="text-xl font-semibold mb-2">{{ $post->title }}</h4>
                         </a>
 
                         <p class="text-gray-600 text-sm mb-4 text-justify">{{ $post->excerpt }}</p>
-                        <a href="{{ route('post.details', $post->slug) }}" class="text-blue-600 inline-block">Read more
+                        <a wire:navigate href="{{ route('post.details', $post->slug) }}" class="text-blue-600 inline-block">Read more
                             →</a>
                     </div>
                 </div>

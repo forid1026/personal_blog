@@ -19,7 +19,7 @@
                 <h3 class="text-xl font-bold mb-4 border-b pb-2">Popular Posts</h3>
                 <ul class="space-y-3">
                     @foreach ($posts as $latestPost)
-                    <li><a href="{{ route('post.details', $latestPost->slug) }}"
+                    <li><a wire:navigate href="{{ route('post.details', $latestPost->slug) }}"
                             class="text-blue-600 hover:underline">{{ $latestPost->title }}</a></li>
                     @endforeach
                 </ul>
@@ -30,7 +30,7 @@
                 <h3 class="text-xl font-bold mb-4 border-b pb-2">Categories</h3>
                 <div class="flex flex-wrap gap-2">
                     @foreach ($categories as $category)
-                    <a href="{{ route('category', $category->slug) }}" class="text-sm px-3 py-1 {{ $category->text_class }}rounded-ful">{{
+                    <a wire:navigate href="{{ route('category', $category->slug) }}" class="text-sm px-3 py-1 {{ $category->text_class }}rounded-ful">{{
                         $category->name }}</a>
                     @endforeach
                 </div>
@@ -59,14 +59,14 @@
             <div class="grid md:grid-cols-3 gap-6">
                 @foreach ($related_posts as $related_post)
                 <div class="bg-white p-4 rounded-lg shadow hover:shadow-md">
-                    <a href="{{ route('post.details', $post->slug) }}">
+                    <a wire:navigate href="{{ route('post.details', $post->slug) }}">
                         <img src="{{ asset('storage/' . $related_post->image) }}" alt="{{ $related_post->title }}"
                         class="w-full h-40 object-cover rounded-md mb-3">
                     </a>
-                    <a class="hover:underline hover:text-blue-600" href="{{ route('post.details', $related_post->slug) }}">
+                    <a wire:navigate class="hover:underline hover:text-blue-600" href="{{ route('post.details', $related_post->slug) }}">
                         <h4 class="font-semibold text-lg mb-2">{{ $related_post->title }}</h4>
                     </a>
-                    <a href="{{  route('post.details', $related_post->slug) }}" class="text-blue-600 text-md hover:underline">Read more →</a>
+                    <a wire:navigate href="{{  route('post.details', $related_post->slug) }}" class="text-blue-600 text-md hover:underline">Read more →</a>
                 </div>
                 @endforeach
             </div>

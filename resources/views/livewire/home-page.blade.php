@@ -7,7 +7,7 @@
             <h1 class="text-4xl md:text-4xl font-bold mb-6">Welcome to My Web Development Blog</h1>
             <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-xl mx-auto">I share practical tips, tutorials, and
                 experiences in Laravel, Livewire, Tailwind CSS, APIs, and more.</p>
-            <a href="#latest-posts"
+            <a href="#latest-posts" wire:navigate
                 class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Read
                 Latest Posts</a>
         </div>
@@ -19,7 +19,8 @@
             <h2 class="text-3xl font-bold text-center mb-10">Categories</h2>
             <div class="flex flex-wrap justify-center gap-4">
                 @foreach ($categories as $category)
-                <a href="{{ route('category', $category->slug) }}" class="px-6 py-2 {{ $category->text_class }} rounded-full transition">{{
+                <a href="{{ route('category', $category->slug) }}" wire:navigate
+                    class="px-6 py-2 {{ $category->text_class }} rounded-full transition">{{
                     $category->name }}</a>
                 @endforeach
             </div>
@@ -35,17 +36,19 @@
                 @foreach ($posts as $post)
                 <!-- Post 1 -->
                 <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden">
-                    <a href="{{ route('post.details', $post->slug) }}">
+                    <a href="{{ route('post.details', $post->slug) }}" wire:navigate>
                         <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image"
                             class="w-full h-48 object-cover">
                     </a>
                     <div class="p-6">
-                        <a href="{{ route('post.details', $post->slug) }}" class="hover:underline hover:text-blue-600">
+                        <a href="{{ route('post.details', $post->slug) }}" wire:navigate
+                            class="hover:underline hover:text-blue-600">
                             <h4 class="text-xl font-semibold mb-2">{{ $post->title }}</h4>
                         </a>
 
                         <p class="text-gray-600 text-sm mb-4 text-justify">{{ $post->excerpt }}</p>
-                        <a href="{{ route('post.details', $post->slug) }}" class="text-blue-600 inline-block">Read more →</a>
+                        <a href="{{ route('post.details', $post->slug) }}" wire:navigate
+                            class="text-blue-600 inline-block">Read more →</a>
                     </div>
                 </div>
                 @endforeach

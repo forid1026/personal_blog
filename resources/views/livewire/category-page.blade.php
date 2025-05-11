@@ -12,7 +12,7 @@
             @foreach ($posts as $post)
             <!-- Blog Post Card -->
             <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-                <a href="{{ route('post.details', $post->slug) }}">
+                <a wire:navigate href="{{ route('post.details', $post->slug) }}">
                     <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}"
                         class="w-full h-48 object-cover rounded-t">
                 </a>
@@ -20,7 +20,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Understanding Laravel Routing</h3>
                     <p class="text-gray-600 text-sm mb-4">A beginner-friendly explanation of Laravel routing and its
                         power.</p>
-                    <a href="{{ route('post.details', $post->slug) }}" class="text-blue-600 hover:underline">Read More
+                    <a wire:navigate href="{{ route('post.details', $post->slug) }}" class="text-blue-600 hover:underline">Read More
                         →</a>
                 </div>
             </div>
