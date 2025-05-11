@@ -30,7 +30,7 @@
                 <h3 class="text-xl font-bold mb-4 border-b pb-2">Categories</h3>
                 <div class="flex flex-wrap gap-2">
                     @foreach ($categories as $category)
-                    <a href="/category/laravel" class="text-sm px-3 py-1 {{ $category->text_class }}rounded-ful">{{
+                    <a href="{{ route('category', $category->slug) }}" class="text-sm px-3 py-1 {{ $category->text_class }}rounded-ful">{{
                         $category->name }}</a>
                     @endforeach
                 </div>
