@@ -19,7 +19,7 @@
             <h2 class="text-3xl font-bold text-center mb-10">Categories</h2>
             <div class="flex flex-wrap justify-center gap-4">
                 @foreach ($categories as $category)
-                <a href="/category/api" class="px-6 py-2 {{ $category->text_class }} rounded-full transition">{{
+                <a href="{{ route('category', $category->slug) }}" class="px-6 py-2 {{ $category->text_class }} rounded-full transition">{{
                     $category->name }}</a>
                 @endforeach
             </div>
