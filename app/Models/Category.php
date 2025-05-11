@@ -12,6 +12,7 @@ class Category extends Model
         'name',
         'slug',
         'status',
+        'text_class',
     ];
 
     protected $casts = [

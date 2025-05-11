@@ -7,6 +7,7 @@ use App\Filament\Resources\PostResource\RelationManagers;
 use App\Models\Post;
 use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -15,6 +16,7 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
@@ -66,6 +68,13 @@ class PostResource extends Resource
                     ->label('Content')
                     ->columnSpan('full'),
 
+                FileUpload::make('image')
+                    ->label('Image')
+                    ->disk('public')
+                    ->directory('post_image')
+                    ->required()
+                    ->columnSpan('full'),
+
                 DateTimePicker::make('published_at')
                     ->label('Publish Date')
                     ->nullable()
@@ -86,11 +95,11 @@ class PostResource extends Resource
                 TextColumn::make('category.name'),
                 TextColumn::make('user.name')->label('Author'),
                 ToggleColumn::make('published')
-                ->label('Published')
-                ->onIcon('heroicon-o-check')
-                ->offIcon('heroicon-o-x-mark')
-                ->onColor('success')
-                ->offColor('gray'),
+                    ->label('Published')
+                    ->onIcon('heroicon-o-check')
+                    ->offIcon('heroicon-o-x-mark')
+                    ->onColor('success')
+                    ->offColor('gray'),
             ])
             ->filters([
                 //
