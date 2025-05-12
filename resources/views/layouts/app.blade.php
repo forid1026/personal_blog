@@ -10,13 +10,10 @@
 </head>
 
 <body class="text-gray-800 bg-white">
-    <?php 
-    $categories = App\Models\Category::take(5)->get();    
-    ?>
     <!-- Header / Navigation -->
     <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a wire:navigate href="{{ route('home') }}" class="text-2xl font-bold text-blue-600">MyBlog</a>
+            <a wire:navigate href="{{ route('home') }}" class="text-2xl font-bold text-blue-600 italic">Learn With Farid</a>
             <nav class="space-x-6">
                 <a wire:navigate href="{{ route('home') }}" class="text-gray-700 hover:text-blue-600">Home</a>
                 @foreach ($categories as $item)
