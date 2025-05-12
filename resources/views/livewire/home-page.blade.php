@@ -7,7 +7,7 @@
             <h1 class="text-4xl md:text-4xl font-bold mb-6">Welcome to My Web Development Blog</h1>
             <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-xl mx-auto">I share practical tips, tutorials, and
                 experiences in Laravel, Livewire, Tailwind CSS, APIs, and more.</p>
-            <a href="#latest-posts" wire:navigate
+            <a href="#latest-posts"
                 class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Read
                 Latest Posts</a>
         </div>
