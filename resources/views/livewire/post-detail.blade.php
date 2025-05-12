@@ -61,7 +61,7 @@
                 <div class="bg-white p-4 rounded-lg shadow hover:shadow-md">
                     <a wire:navigate href="{{ route('post.details', $post->slug) }}">
                         <img src="{{ asset('storage/' . $related_post->image) }}" alt="{{ $related_post->title }}"
-                        class="w-full h-40 object-cover rounded-md mb-3">
+                        class="w-full h-auto object-cover rounded-md mb-3">
                     </a>
                     <a wire:navigate class="hover:underline hover:text-blue-600" href="{{ route('post.details', $related_post->slug) }}">
                         <h4 class="font-semibold text-lg mb-2">{{ $related_post->title }}</h4>

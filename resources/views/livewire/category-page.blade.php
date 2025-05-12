@@ -14,7 +14,7 @@
             <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
                 <a wire:navigate href="{{ route('post.details', $post->slug) }}">
                     <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}"
-                        class="w-full h-48 object-cover rounded-t">
+                        class="w-full h-auto object-cover rounded-t">
                 </a>
                 <div class="p-5">
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Understanding Laravel Routing</h3>

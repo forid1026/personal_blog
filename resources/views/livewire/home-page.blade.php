@@ -38,7 +38,7 @@
                 <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden">
                     <a href="{{ route('post.details', $post->slug) }}" wire:navigate>
                         <img src="{{ asset('storage/' . $post->image) }}" alt="Post Image"
-                            class="w-full h-48 object-cover">
+                            class="w-full h-auto object-cover">
                     </a>
                     <div class="p-6">
                         <a href="{{ route('post.details', $post->slug) }}" wire:navigate
